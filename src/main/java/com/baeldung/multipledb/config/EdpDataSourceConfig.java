@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 
 @Configuration//("EdpDataSource")
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "org.baeldung.multipledb.product.repository",
+@EnableJpaRepositories(basePackages = "com.baeldung.multipledb.product.repository",
         entityManagerFactoryRef = "entityManagerFactory",
         transactionManagerRef = "edpTransactionManager"
 )
@@ -40,7 +40,7 @@ public class EdpDataSourceConfig {
     public LocalContainerEntityManagerFactoryBean edpEntityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(edpDataSource())
-                .packages("org.baeldung.multipledb.product.entity")
+                .packages("com.baeldung.multipledb.product.entity")
                 .build();
     }
 

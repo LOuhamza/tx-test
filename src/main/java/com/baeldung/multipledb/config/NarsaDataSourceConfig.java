@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "org.baeldung.multipledb.user.repository",
+@EnableJpaRepositories(basePackages = "com.baeldung.multipledb.user.repository",
         entityManagerFactoryRef = "narsaEntityManagerFactory",
         transactionManagerRef = "narsaTransactionManager"
 )
@@ -38,7 +38,7 @@ public class NarsaDataSourceConfig {
     public LocalContainerEntityManagerFactoryBean narsaEntityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
                 .dataSource(narsaDataSource())
-                .packages("org.baeldung.multipledb.user.entity")
+                .packages("com.baeldung.multipledb.user.entity")
                 .build();
     }
 
